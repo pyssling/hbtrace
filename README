@@ -1,0 +1,6 @@
+High-Bandwidth Tracer
+
+hbtrace is an attempt to create a non-intrusive high-bandwidth
+tracer that can be incorporated in other applications for debugging
+and other purposes while attempting to minimize the performance hit
+on applications.
