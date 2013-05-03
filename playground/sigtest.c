@@ -3,15 +3,16 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void handler(int sig)
+void handler(int sig, struct __siginfo *siginfo, void *sigptr)
 {
-	printf("got sig %d\n", sig);
+	printf("got sig %d from %d\n", sig, siginfo->si_pid);
 }
 
 const struct sigaction sigio = {
 	.__sigaction_u = {
-		.__sa_handler = handler,
+		.__sa_sigaction = handler,
 	},
+	.sa_flags = SA_SIGINFO,
 };
 	
 
