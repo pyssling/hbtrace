@@ -1,2 +1,2 @@
 
-all: sigtest
+all: sigtest shmemtest atomictest
